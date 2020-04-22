@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID, NgZone, OnInit, AfterViewInit } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 let Quill: any = null;
@@ -15,8 +15,7 @@ export class AppComponent {
   editor_modules = {};
 
   constructor(
-    @Inject(PLATFORM_ID) protected platformId: any,
-    private zone: NgZone,
+    @Inject(PLATFORM_ID) protected platformId: any
   ) {
     if (isPlatformBrowser(this.platformId)) {
 

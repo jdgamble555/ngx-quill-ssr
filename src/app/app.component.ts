@@ -2,6 +2,7 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 let Quill: any = null;
+// https://github.com/nrwl/nx/issues/1320
 
 @Component({
   selector: 'app-root',

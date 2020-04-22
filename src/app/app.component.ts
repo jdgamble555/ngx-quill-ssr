@@ -18,13 +18,11 @@ export class AppComponent {
     @Inject(PLATFORM_ID) protected platformId: any
   ) {
     if (isPlatformBrowser(this.platformId)) {
-
-      Quill = require('node_modules/quill');
+      Quill = require('quill');
       const ImageResize = require('quill-image-resize').default;
       const { ImageDrop } = require('quill-image-drop-module');
       Quill.register('modules/imageResize', ImageResize);
       Quill.register('modules/imageDrop', ImageDrop);
-
     }
     this.editor_modules = {
       toolbar: {

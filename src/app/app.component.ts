@@ -1,8 +1,7 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, NgZone, OnInit, AfterViewInit } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 let Quill: any = null;
-let ImageResize: any = null;
 
 @Component({
   selector: 'app-root',
@@ -16,12 +15,17 @@ export class AppComponent {
   editor_modules = {};
 
   constructor(
-    @Inject(PLATFORM_ID) protected platformId: any
+    @Inject(PLATFORM_ID) protected platformId: any,
+    private zone: NgZone,
   ) {
-    if (isPlatformBrowser(platformId)) {
-      //Quill = require('node_modules/quill');
-      //ImageResize = require('quill-image-resize-module');
-      //Quill.register('modules/imageResize', ImageResize);
+    if (isPlatformBrowser(this.platformId)) {
+
+      Quill = require('node_modules/quill');
+      const ImageResize = require('quill-image-resize').default;
+      const { ImageDrop } = require('quill-image-drop-module');
+      Quill.register('modules/imageResize', ImageResize);
+      Quill.register('modules/imageDrop', ImageDrop);
+
     }
     this.editor_modules = {
       toolbar: {
@@ -36,7 +40,9 @@ export class AppComponent {
           ['link', 'image']
         ]
       },
-      //imageResize: true
+      imageResize: true,
+      imageDrop: true
     };
   }
+
 }

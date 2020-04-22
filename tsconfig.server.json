@@ -5,11 +5,15 @@
     "module": "commonjs",
     "types": [
       "node"
-    ]
+    ],
+    "paths": {
+      "quill": ["src/app/quill.mock.server.ts"]
+    }
   },
   "files": [
     "src/main.server.ts",
-    "server.ts"
+    "server.ts",
+    "src/app/quill.mock.server.ts",
   ],
   "angularCompilerOptions": {
     "entryModule": "./src/app/app.server.module#AppServerModule"

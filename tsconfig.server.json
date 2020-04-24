@@ -7,15 +7,17 @@
       "node"
     ],
     "paths": {
-      "quill": ["quill.mock.server.ts"]
+      "quill": ["src/app/mocks/quill.mock.server.ts"]
     }
   },
   "files": [
     "src/main.server.ts",
-    "server.ts",
-    "quill.mock.server.ts",
+    "server.ts"
   ],
   "angularCompilerOptions": {
     "entryModule": "./src/app/app.server.module#AppServerModule"
-  }
+  },
+  "include": [
+    "src/app/mocks/*"
+  ]
 }

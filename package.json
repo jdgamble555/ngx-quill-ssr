@@ -8,10 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev:ssr": "ng run ngxQuillSSR:serve-ssr",
-    "serve:ssr": "node dist/ngxQuillSSR/server/main.js",
-    "build:ssr": "ng build --prod && ng run ngxQuillSSR:server:production",
-    "prerender": "ng run ngxQuillSSR:prerender"
+    "dev:ssr": "ng run ngx-quill-ssr:serve-ssr",
+    "serve:ssr": "node dist/ngx-quill-ssr/server/main.js",
+    "build:ssr": "ng build --prod && ng run ngx-quill-ssr:server:production",
+    "prerender": "ng run ngx-quill-ssr:prerender"
   },
   "private": true,
   "dependencies": {

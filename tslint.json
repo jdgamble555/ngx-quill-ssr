@@ -1,6 +1,12 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "nx-enforce-module-boundaries": [
+      true,
+      {
+        "allow": ["src/app/mocks/quill.mock.server.ts"]
+      }
+    ],
     "align": {
       "options": [
         "parameters",

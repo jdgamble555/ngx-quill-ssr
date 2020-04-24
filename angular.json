@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngxQuillSSR": {
+    "ngx-quill-ssr": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngxQuillSSR/browser",
+            "outputPath": "dist/ngx-quill-ssr/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngxQuillSSR:build"
+            "browserTarget": "ngx-quill-ssr:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngxQuillSSR:build:production"
+              "browserTarget": "ngx-quill-ssr:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngxQuillSSR:build"
+            "browserTarget": "ngx-quill-ssr:build"
           }
         },
         "test": {
@@ -114,18 +114,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngxQuillSSR:serve"
+            "devServerTarget": "ngx-quill-ssr:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngxQuillSSR:serve:production"
+              "devServerTarget": "ngx-quill-ssr:serve:production"
             }
           }
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/ngxQuillSSR/server",
+            "outputPath": "dist/ngx-quill-ssr/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -146,21 +146,21 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
-            "browserTarget": "ngxQuillSSR:build",
-            "serverTarget": "ngxQuillSSR:server"
+            "browserTarget": "ngx-quill-ssr:build",
+            "serverTarget": "ngx-quill-ssr:server"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngxQuillSSR:build:production",
-              "serverTarget": "ngxQuillSSR:server:production"
+              "browserTarget": "ngx-quill-ssr:build:production",
+              "serverTarget": "ngx-quill-ssr:server:production"
             }
           }
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "ngxQuillSSR:build:production",
-            "serverTarget": "ngxQuillSSR:server:production",
+            "browserTarget": "ngx-quill-ssr:build:production",
+            "serverTarget": "ngx-quill-ssr:server:production",
             "routes": [
               "/"
             ]
@@ -171,5 +171,5 @@
         }
       }
     }},
-  "defaultProject": "ngxQuillSSR"
+  "defaultProject": "ngx-quill-ssr"
 }

@@ -1,8 +1,5 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-
-let Quill: any = null;
-// https://github.com/nrwl/nx/issues/1320
+import { Component } from '@angular/core';
+import { QuillService } from './quill.service';
 
 @Component({
   selector: 'app-root',
@@ -15,16 +12,7 @@ export class AppComponent {
 
   editor_modules = {};
 
-  constructor(
-    @Inject(PLATFORM_ID) protected platformId: any
-  ) {
-    if (isPlatformBrowser(this.platformId)) {
-      Quill = require('quill');
-      const ImageResize = require('quill-image-resize').default;
-      const { ImageDrop } = require('quill-image-drop-module');
-      Quill.register('modules/imageResize', ImageResize);
-      Quill.register('modules/imageDrop', ImageDrop);
-    }
+  constructor(public qs: QuillService) {
     this.editor_modules = {
       toolbar: {
         container: [
@@ -42,5 +30,4 @@ export class AppComponent {
       imageDrop: true
     };
   }
-
 }

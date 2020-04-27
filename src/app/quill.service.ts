@@ -8,13 +8,31 @@ let Quill: any = null;
 })
 export class QuillService {
 
+  editor_modules = {};
+
   constructor(@Inject(PLATFORM_ID) protected platformId: any) {
     if (isPlatformBrowser(this.platformId)) {
       Quill = require('quill');
-      let ImageResize = require('quill-image-resize').default;
-      let { ImageDrop } = require('quill-image-drop-module');
+      const ImageResize = require('quill-image-resize').default;
+      const { ImageDrop } = require('quill-image-drop-module');
       Quill.register('modules/imageResize', ImageResize);
       Quill.register('modules/imageDrop', ImageDrop);
     }
+    this.editor_modules = {
+      toolbar: {
+        container: [
+          [{ 'font': [] }],
+          [{ 'size': ['small', false, 'large', 'huge'] }],
+          ['bold', 'italic', 'underline', 'strike'],
+          [{ 'header': 1 }, { 'header': 2 }],
+          [{ 'color': [] }, { 'background': [] }],
+          [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+          [{ 'align': [] }],
+          ['link', 'image']
+        ]
+      },
+      imageResize: true,
+      imageDrop: true
+    };
   }
 }

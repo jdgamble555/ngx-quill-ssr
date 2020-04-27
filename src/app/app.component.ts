@@ -10,24 +10,7 @@ export class AppComponent {
 
   title = 'ngxQuillSSR';
 
-  editor_modules = {};
-
   constructor(public qs: QuillService) {
-    this.editor_modules = {
-      toolbar: {
-        container: [
-          [{ 'font': [] }],
-          [{ 'size': ['small', false, 'large', 'huge'] }],
-          ['bold', 'italic', 'underline', 'strike'],
-          [{ 'header': 1 }, { 'header': 2 }],
-          [{ 'color': [] }, { 'background': [] }],
-          [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-          [{ 'align': [] }],
-          ['link', 'image']
-        ]
-      },
-      imageResize: true,
-      imageDrop: true
-    };
+
   }
 }

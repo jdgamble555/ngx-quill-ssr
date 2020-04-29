@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "jokecan-dev": {
+      "hosting": {
+        "ngx-quill-ssr": [
+          "jokecan-dev"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "jokecan-dev"
+  }
+}

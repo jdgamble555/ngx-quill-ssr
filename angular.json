@@ -132,7 +132,10 @@
             "tsConfig": "tsconfig.server.json",
             "customWebpackConfig": {
               "path": "./custom-webpack.config.js"
-            }
+            },
+            "externalDependencies": [
+              "@firebase/firestore"
+            ]
           },
           "configurations": {
             "production": {
@@ -173,8 +176,13 @@
           "configurations": {
             "production": {}
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ngx-quill-ssr"
 }

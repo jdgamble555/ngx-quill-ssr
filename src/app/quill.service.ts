@@ -11,7 +11,7 @@ export class QuillService {
   editorModules = {
     imageResize: true,
     imageDrop: true,
-    syntax: true
+    //syntax: true
   };
   
   editorStyle = {

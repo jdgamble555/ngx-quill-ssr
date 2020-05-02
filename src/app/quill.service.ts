@@ -1,7 +1,7 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-
-let Quill: any = null;
+import { Injectable } from '@angular/core';
+import Quill from 'quill';
+import { ImageDrop } from 'quill-image-drop-module';
+import ImageResize from 'quill-image-resize';
 
 @Injectable({
   providedIn: 'root'
@@ -13,19 +13,14 @@ export class QuillService {
     imageDrop: true,
     //syntax: true
   };
-  
+
   editorStyle = {
     resize: 'vertical',
     'overflow-y': 'auto'
   };
 
-  constructor(@Inject(PLATFORM_ID) protected platformId: any) {
-    if (isPlatformBrowser(this.platformId)) {
-      Quill = require('quill');
-      let ImageResize = require('quill-image-resize').default;
-      let { ImageDrop } = require('quill-image-drop-module');
-      Quill.register('modules/imageResize', ImageResize);
-      Quill.register('modules/imageDrop', ImageDrop);
-    }
+  constructor() { 
+    Quill.register('modules/imageResize', ImageResize);
+    Quill.register('modules/imageDrop', ImageDrop);
   }
 }

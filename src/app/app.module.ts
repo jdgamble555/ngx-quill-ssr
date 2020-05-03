@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuillModule } from 'ngx-quill';
+import { ImageDrop } from 'quill-image-drop-module';
+import ImageResize from 'quill-image-resize';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,21 @@ import { QuillModule } from 'ngx-quill';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot({
+      customModules: [
+      {
+        implementation: ImageDrop,
+        path: 'modules/ImageDrop'
+      },
+    {
+      implementation: ImageResize,
+      path: 'modules/ImageResize'
+    }],
+      modules: {
+        ImageResize: true,
+        ImageDrop: true
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

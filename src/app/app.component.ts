@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { QuillService } from './quill.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,9 @@ import { QuillService } from './quill.service';
 })
 export class AppComponent {
 
-  title = 'ngxQuillSSR';
+  title = 'ngx-quill-ssr';
 
-  constructor(public qs: QuillService) {
+  constructor() {
 
   }
 }

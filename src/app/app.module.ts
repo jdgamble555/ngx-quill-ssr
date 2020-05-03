@@ -15,20 +15,20 @@ import ImageResize from 'quill-image-resize';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     QuillModule.forRoot({
-      customModules: [
-      {
+      customModules: [{
         implementation: ImageDrop,
         path: 'modules/ImageDrop'
       },
-    {
-      implementation: ImageResize,
-      path: 'modules/ImageResize'
-    }],
+      {
+        implementation: ImageResize,
+        path: 'modules/ImageResize',
+      }],
       modules: {
         ImageResize: true,
         ImageDrop: true
-      }
-    })
+      },
+      suppressGlobalRegisterWarning: true
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

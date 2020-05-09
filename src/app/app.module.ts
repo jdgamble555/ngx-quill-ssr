@@ -27,7 +27,9 @@ import ImageResize from 'quill-image-resize';
         ImageResize: true,
         ImageDrop: true
       },
-      suppressGlobalRegisterWarning: true
+      suppressGlobalRegisterWarning: true,
+      theme: 'snow',
+      bounds: 'self'
     }),
   ],
   providers: [],
